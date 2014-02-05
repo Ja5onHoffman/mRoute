@@ -2,13 +2,19 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {}
+      "iron-router": {},
+      "tags": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.2",
         "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+      },
+      "tags": {
+        "git": "https://github.com/apendua/meteor-tags.git",
+        "tag": "v0.1.2.2",
+        "commit": "613382880617178276a7fbbcfe07812407d48e6b"
       }
     }
   }
