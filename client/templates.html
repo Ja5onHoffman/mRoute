@@ -1,0 +1,22 @@
+<template name="airportForm">
+	<form>
+							<input type="text" id="origin" placeholder="Origin">
+							<input type="text" id="destination" placeholder="Destination">
+							<button type="submit">Go!</button>
+						</form>
+</template>
+
+
+<template name="routesTemplate">
+	<div class="filedRoute">
+		{{#each filedRoutes}}
+			<li>{{route}}</li>
+		{{/each}}
+	</div>
+</template>
+
+<template name="route">
+	<div class="route">
+		{{route}}
+	</div>
+</template>

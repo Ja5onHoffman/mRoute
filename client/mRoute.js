@@ -1,22 +1,25 @@
 FiledRoutes = new Meteor.Collection('filedRoutes');
 
+
 Template.routesTemplate.filedRoutes = function() {
 	return FiledRoutes.find();
 };
 
 Template.airportForm.events({
-	"click input": function() {
-	callFltAware();
+	"click button": function(event) {
+		event.preventDefault()
+		var origin = $('#origin').val();
+		var destination = $('#destination').val();
+		Meteor.call("callFltAware", origin, destination, function (e,result) {
+			if (!e && result) {
+				console.log(result.data.RoutesBetweenAirportsResult.data);
+
+			}
+		});
 	}
 })
 
-Meteor.call("callFltAware", function(e,r) {
-	if (!e && r) {
-		console.log(r.data);
-	}
-})
-
-
+// Push routes to database and show long list of previously filed routes. 
 
 
 /* 

@@ -2,26 +2,27 @@ FiledRoutes = new Meteor.Collection('filedRoutes');
 
 
 Meteor.startup(function() {
-	if (FiledRoutes.find().count() === 0) {
-		FiledRoutes.insert({route: "Jason"});
-		FiledRoutes.insert({route: "Hoffman"});
-	}
+	// code to run on server at startup
 });
 
-var url = "http://flightxml.flightaware.com/json/FlightXML2/";
+var url = "http://flightxml.flightaware.com/json/FlightXML2/RoutesBetweenAirports";
 var username = "jasonandrewhoffman";
 var apiKey = "323da49e858c3d25fa589d1f6de62a96807f9dab";
 
 Meteor.methods({
-	callFltAware: function() {
-		this.unblock();
-		return Meteor.http.get(url + "RoutesBetweenAirports", {
-		auth: "jasonandrewhoffman:323da49e858c3d25fa589d1f6de62a96807f9dab",
-   	query: {origin: "KJFK", destination: "KATL"} 
-		});
-	}
-});
-
+	callFltAware: function(origin, destination) {
+		this.unblock()
+      try {
+        var result = HTTP.call("GET", url + "?origin=" + origin + "&destination=" + destination, {
+    		auth: "jasonandrewhoffman:0560af20db89ba4b2fba0dbae9d4543e36cfc69a", 
+    });
+        return result
+      } catch (e) {
+        console && console.log && console.log('Exception calling', url)
+        throw e
+      }
+    }
+  })
 
 
 /* 
