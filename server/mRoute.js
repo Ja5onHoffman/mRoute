@@ -1,7 +1,7 @@
 FiledRoutes = new Meteor.Collection('filedRoutes');
 
 Meteor.publish('filedRoutes', function(origin, destination) {
-	return FiledRoutes.find({origin: origin, destination: destination});
+	return FiledRoutes.find({airports: {origin: origin, destination: destination}});
 })
 
 Meteor.startup(function() {
@@ -30,11 +30,20 @@ Meteor.methods({
         var r = result.data.RoutesBetweenAirportsExResult.data; 
         for (var i = 0; i < r.length; i++) {
         	var route = {
-        		origin: origin,
-        		destination: destination,
-        		route: r[i].route
-        	}
-        	FiledRoutes.insert(route)
+                airports: {
+                    origin: origin, 
+                    destination: destination},
+                route: { 
+                    route: r[i].route, 
+                    filedAltitude_max: 
+                    r[i].filedAltitude_max, 
+                    filedAltitude_min: r[i].filedAltitude_min
+                     }
+        	} 
+
+                FiledRoutes.insert(route);
+        
+        	
         }
         return result
       } catch (e) {
