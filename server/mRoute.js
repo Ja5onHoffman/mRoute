@@ -27,22 +27,25 @@ Meteor.methods({
                 maxFileAge: "30 days"
             }
     });
-        var r = result.data.RoutesBetweenAirportsExResult.data; 
-        for (var i = 0; i < r.length; i++) {
-        	var route = {
-                airports: {
-                    origin: origin, 
-                    destination: destination},
-                route: { 
-                    route: r[i].route, 
-                    filedAltitude_max: 
-                    r[i].filedAltitude_max, 
-                    filedAltitude_min: r[i].filedAltitude_min
-                     }
-        	} 
+    
+    var r = result.data.RoutesBetweenAirportsExResult.data; 
+      for (var i = 0; i < r.length; i++) {
 
-                FiledRoutes.insert(route);
-        
+      var route = {
+
+        airports: {
+            origin: origin, 
+            destination: destination
+                },
+        route: { 
+              route: r[i].route, 
+              filedAltitude_max: r[i].filedAltitude_max, 
+              filedAltitude_min: r[i].filedAltitude_min
+            }
+          }
+
+          FiledRoutes.upsert(route, route);
+            
         	
         }
         return result
