@@ -1,6 +1,7 @@
 {
   "packages": {
     "iron-router": {},
-    "tags": {}
+    "tags": {},
+    "bootstrap-3": {}
   }
 }

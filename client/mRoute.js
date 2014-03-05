@@ -14,10 +14,10 @@ Template.airportForm.events({
 	"submit form": function(event) {
 
 		event.preventDefault()
-		var origin = $('#origin').val();
-		var destination = $('#destination').val();
-  	Session.set('origin', $('#origin').val());
-    Session.set('destination', $('#destination').val());
+		var origin = $('#origin').val().toUpperCase();
+		var destination = $('#destination').val().toUpperCase();;
+  	Session.set('origin', $('#origin').val().toUpperCase());
+    Session.set('destination', $('#destination').val().toUpperCase());
 		Meteor.call("callFltAware", origin, destination, function (e, result) {
 			if (!e && result) {
 				console.log(result.data.RoutesBetweenAirportsExResult.data);

@@ -6,7 +6,7 @@
 standard-app-packages
 insecure
 preserve-inputs
-bootstrap
 iron-router
 http
 tags
+bootstrap-3

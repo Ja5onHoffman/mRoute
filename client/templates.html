@@ -1,10 +1,13 @@
 <template name="airportForm">
-	<form>
-							<input type="text" id="origin" placeholder="Origin">
-							<input type="text" id="destination" placeholder="Destination">
-							<button type="submit">Go!</button>
-						</form>
-</template>
+	<form class="form-inline" role="form">
+		<div class="form-group airportForm">
+			<label>Origin</label>
+			<input class="form-control" type="text" placeholder="Origin">
+			<label>Destination</label>
+			<input class="form-control" type="text" id="destination" placeholder="Destination">
+					<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+		</div>
+	</form>
 
 
 <template name="routesTemplate">
