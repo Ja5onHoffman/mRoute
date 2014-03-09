@@ -18,6 +18,8 @@ Template.airportForm.events({
 		var destination = $('#destination').val().toUpperCase();;
   	Session.set('origin', $('#origin').val().toUpperCase());
     Session.set('destination', $('#destination').val().toUpperCase());
+    $(".table").show();
+    $( "tr:odd" ).css( "background-color", "#bbbbff" );
 		Meteor.call("callFltAware", origin, destination, function (e, result) {
 			if (!e && result) {
 				console.log(result.data.RoutesBetweenAirportsExResult.data);
@@ -27,9 +29,8 @@ Template.airportForm.events({
 })
 
 Template.route.events({
-	"click .route li": function(e) {
+	"click #main > div > table > tbody > tr:nth-child(11) > td": function(e) {
 		$(e.target).select();
 		alert("Press CTRL + S to copy the route: " + $(e.target).text() + " to the clipboard.");
 	}
 })
-

@@ -1,3 +1,8 @@
+* {
+    border: 1px dotted blue;
+}
+
+
 .route {
     background: #fff;
     border-radius: 3px;
@@ -11,16 +16,26 @@ body {
     color: #666666;
 }
 
+a:active {
+    background: blue;
+}
+
 .jumbotron {
     text-align: center;
+    margin: 0 auto;
 }
 
 .form-group.airportForm {
     margin: 0 auto;
+    border-width: 2px;
+    border-color: blue;
+    border-radius: 4px 4px 0 0;
 }
 
 .container {
     max-width: 730px;
+    padding: 30px;
+    text-align: center;
 }
 
 .navbar { margin-bottom: 10px }
@@ -39,12 +54,7 @@ body {
     opacity: 1;
 }
 
-.route:hover {
-	background: #808080;
-	color: #ffffff;
-}
-
-.route:active {
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
 	background: blue;
 	top: 2px;
 }
@@ -59,4 +69,8 @@ body {
 input.form-control {
     height: 45px;
     margin: 10px;
+}
+
+.table {
+    display: none;
 }

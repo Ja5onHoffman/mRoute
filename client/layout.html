@@ -1,33 +1,17 @@
 <template name="layout">
-	<div class="container">
-	        <div class="header">
-			        <ul class="nav nav-pills pull-right">
-			          <li class="active"><a href="#">Home</a></li>
-			          <li><a href="#">About</a></li>
-			          <li><a href="#">Contact</a></li>
-			        </ul>
-	          <div class="jumbotron">
-	              <h1>Quick Route</h1>
-	          </div>
-	          <div class="container">
-	          	{{>airportForm}}
-	          </div>
-	        </div>
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
 	    </div>
-	</div>
-	<div id="main" class="row-fluid">
+	  </div>
+	  <div class="collapse navbar-collapse">
+	    <ul class="navbar nav">
+	      <li><a href="{{pathFor 'homeTemplate'}}">Home</a></li>
+	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<div>
 		{{yield}}
 	</div>
 </template>
-
-
-<!-- <template name="airportForm">
-	<form>
-		<input type="text" id="origin" placeholder="Origin">
-		<input type="text" id="destination" placeholder="Destination">
-		<button type="submit">Go!</button>
-	</form>
-		<div>
-			{{yield}}
-		</div>
-</template> --> 
