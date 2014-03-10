@@ -13,10 +13,12 @@
 
 <template name="routesTemplate">
 	<div class="filedRoute">
-		<table class="table table-striped table-hover route">
+		<table class="table table-hover route">
 			<thead>
 				<tr>
-					<th>Routes</th>
+					<th>Route</th>
+					<th>Max Altitude</th>
+					<th>Min Altitude</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,16 +31,18 @@
 </template>
 
 <template name="route">
-			<tr>
-			<td id="routing">Route: {{route.route}}</td>
-			<td>Filed Altitude Max: {{route.filedAltitude_max}}</td> 
-			<td>Filed Altitude Min: {{route.filedAltitude_min}}</td>
-			<tr>
+	<tr>
+		<td id="routing">{{route.route}}</td>
+		<td>{{route.filedAltitude_max}}</td> 
+		<td>{{route.filedAltitude_min}}</td>
+	</tr>
 </template>
 
 <template name="aboutPage">
-	<div>
-		<p>This is the about page.</p>	
+	<div class="about">
+		<p>QuickRoute is a project I created to while learning Meteor. As a pilot, I've come across numerous flight planning websites that require the user to input routing for their proposed flight plan. Acquiring this information often requires multiple steps and sometimes the use of a different website. QuickRoute provides a fast way to copy and paste commonly filed flight plans.</p>
+
+			<p>The QuickRoute database does not store duplicate flight plans. Each returned result will be unique either in routing or filed altitudes. Routes are deleted after 30 days.</p>	
 	</div>
 </template>
 
@@ -50,7 +54,7 @@
 	  <div class="container">
 	    {{>airportForm}}
 	  </div>
-	  <div class="container">
+	  <div class="routesTable">
 	  	{{>routesTemplate}}
 	  </div>
 </template>

@@ -12,8 +12,8 @@ Deps.autorun(function() {
 
 Template.airportForm.events({
 	"submit form": function(event) {
-
-		event.preventDefault()
+	event.preventDefault()
+	if ($("#origin").val() && $("#destination").val()) {
 		var origin = $('#origin').val().toUpperCase();
 		var destination = $('#destination').val().toUpperCase();;
   	Session.set('origin', $('#origin').val().toUpperCase());
@@ -25,6 +25,10 @@ Template.airportForm.events({
 				console.log(result.data.RoutesBetweenAirportsExResult.data);
 			}
 		});
+			} else {
+				false;
+			alert("Please make sure you've enter an origin and destination");
+		}
 	}
 })
 
