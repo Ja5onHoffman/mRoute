@@ -29,7 +29,7 @@ Template.airportForm.events({
 })
 
 Template.route.events({
-	"click #main > div > table > tbody > tr:nth-child(11) > td": function(e) {
+	"click #routing": function(e) {
 		$(e.target).select();
 		alert("Press CTRL + S to copy the route: " + $(e.target).text() + " to the clipboard.");
 	}
