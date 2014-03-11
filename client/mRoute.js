@@ -33,8 +33,7 @@ Template.airportForm.events({
 })
 
 Template.route.events({
-	"click #routing": function(e) {
-		$(e.target).select();
-		alert("Press CTRL + S to copy the route: " + $(e.target).text() + " to the clipboard.");
+	"click #routeRow": function(e) {
+		alert("Hightlight the route: " + $("#routing").text() + ", then press Ctrl + C to copy to the clipboard.");
 	}
 })

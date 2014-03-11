@@ -23,6 +23,7 @@ a:active {
 .jumbotron {
     text-align: center;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .form-group.airportForm {
@@ -34,7 +35,7 @@ a:active {
 
 .container {
     max-width: 730px;
-    padding: 30px;
+    padding: 10px 30px 30px;
     text-align: center;
 }
 
@@ -64,7 +65,10 @@ input.form-control {
 }
 
 .routesTable {
-    padding: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    padding-top: 20px;
 }
 
 .about {
