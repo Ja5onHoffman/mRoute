@@ -1,5 +1,3 @@
-FiledRoutes = new Meteor.Collection('filedRoutes');
-
 Template.routesTemplate.helpers({
 	filedRoutes: function() {
 		return FiledRoutes.find();

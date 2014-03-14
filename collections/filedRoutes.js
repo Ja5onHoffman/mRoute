@@ -1,0 +1,1 @@
+FiledRoutes = new Meteor.Collection('routes');
