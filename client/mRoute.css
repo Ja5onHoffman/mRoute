@@ -16,9 +16,6 @@ body {
     color: #666666;
 }
 
-a:active {
-    background: blue;
-}
 
 .jumbotron {
     text-align: center;

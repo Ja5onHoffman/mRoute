@@ -1,3 +1,4 @@
+
 Template.routesTemplate.helpers({
 	filedRoutes: function() {
 		return FiledRoutes.find();

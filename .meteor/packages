@@ -10,3 +10,6 @@ iron-router
 http
 tags
 bootstrap-3
+accounts-ui-bootstrap-3
+accounts-password
+accounts-twitter

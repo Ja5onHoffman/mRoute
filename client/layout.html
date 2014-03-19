@@ -1,16 +1,5 @@
 <template name="layout">
-	<nav class="navbar navbar-default" role="navigation">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	    </div>
-	  </div>
-	  <div class="collapse navbar-collapse">
-	    <ul class="navbar nav">
-	      <li><a href="{{pathFor 'homeTemplate'}}">Home</a></li>
-	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
-	    </ul>
-	  </div>
-	</nav>
+	{{>navBar}}
 	<div>
 		{{yield}}
 	</div>

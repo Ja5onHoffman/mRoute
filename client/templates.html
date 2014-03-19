@@ -7,6 +7,7 @@
 			<input class="form-control" type="text" id="destination" placeholder="Destination">
 					<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
 		</div>
+
 	</form>
 </template>
 
@@ -58,3 +59,21 @@
 	  	{{>routesTemplate}}
 	  </div>
 </template>
+
+<template name="navBar">
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	    </div>
+	  <div class="collapse navbar-collapse">
+	    <ul class="navbar nav">
+	      <li><a href="{{pathFor 'homeTemplate'}}">Home</a></li>
+	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
+	    </ul>
+    		<ul class="nav navbar-nav navbar-right">
+      		{{ loginButtons }}
+    		</ul>
+	  </div>
+	</div> 
+	</nav>
+</template> 

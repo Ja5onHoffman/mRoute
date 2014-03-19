@@ -1,3 +1,4 @@
+
 Meteor.publish('filedRoutes', function(origin, destination) {
 	return FiledRoutes.find({airports: {origin: origin, destination: destination}});
 })
