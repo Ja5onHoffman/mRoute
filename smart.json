@@ -1,8 +1,7 @@
 {
   "packages": {
     "iron-router": {},
-    "tags": {},
     "bootstrap-3": {},
-    "accounts-ui-bootstrap-3": {}
+    "tags": {}
   }
 }
