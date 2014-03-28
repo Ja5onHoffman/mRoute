@@ -37,16 +37,3 @@ Template.route.events({
 	}
 })
 
-
-Template.navBar.events({
-	"click .login": function(e) {
-		e.preventDefault();
-		Session.set("overlay", "loginForm");
-	}
-})
-
-Template.overlay.helpers({
-	loginForm: function(){
-    return Session.equals("overlay", "loginform");
-  }
-})
