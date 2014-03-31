@@ -70,39 +70,10 @@
 	      <li><a href="{{pathFor 'homeTemplate'}}">Home</a></li>
 	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
 	    </ul>
-	    <ul class="navbar nav pull-right">
-	    	<li class="login"><a href="#login" data-toggle="modal">Login/Sign Up</a></li>
+	    <ul class="navbar nav">
+	    {{>loginButtons}}
 	    </ul>
 	</div>
 	</div>
 	</nav>
 </template>
-
-<template name="overlay">
-	{{#if overlay}}
-	<div id="overlay" class="overlay">
-		<div class="cover"></div>
-		<div id="panel" class="panel wrapper">
-
-			{{#if loginForm}}
-				{{>loginForm}}
-			{{/if}}
-
-		</div>
-	</div>
-	{{/if}}
-</template>
-
-
-<template name="loginForm">
-	<div class="modal fade" id="login" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<p>Login modal placeholder</p> 
-				</div> 
-			</div> 
-		</div>
-	</div>
-</template>
-
