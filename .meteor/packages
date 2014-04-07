@@ -8,8 +8,7 @@ insecure
 http
 bootstrap-3
 accounts-password
-accounts-base
 iron-router
 tags
 blaze-layout
-accounts-ui-bootstrap-3
+accounts-ui-bootstrap-dropdown

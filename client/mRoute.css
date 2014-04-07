@@ -23,12 +23,14 @@ body {
     padding: 10px;
 }
 
-.form-group.airportForm {
+.airportForm {
     margin: 0 auto;
     border-width: 2px;
     border-color: blue;
     border-radius: 4px 4px 0 0;
 }
+
+
 
 .container {
     max-width: 730px;
@@ -52,7 +54,7 @@ body {
     opacity: 1;
 }
 
-input.form-control {
+input#origin.form-control, input#destination.form-control {
     height: 45px;
     margin: 10px;
 }

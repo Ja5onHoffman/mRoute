@@ -5,6 +5,13 @@ Template.routesTemplate.helpers({
 	}
 });
 
+Template.flightPlanForm.helpers({
+	routeFill: function(content) {
+		return content;
+	}
+});
+
+
 Deps.autorun(function() {
 	Meteor.subscribe('filedRoutes', Session.get("origin"), Session.get("destination"));
 })
@@ -33,7 +40,9 @@ Template.airportForm.events({
 
 Template.route.events({
 	"click #routeRow": function(e) {
-		alert("Hightlight the route: " + $("#routing").text() + ", then press Ctrl + C to copy to the clipboard.");
-	}
+		e.preventDefault;
+			var content = $('#routing').text();
+			Router.go('/flightPlanForm');
+		}
 })
 

@@ -1,5 +1,5 @@
 <template name="airportForm">
-	<form class="form-inline" role="form">
+	<form class="form-inline" role="form" id="airportForm">
 		<div class="form-group airportForm">
 			<label class="sr-only">Origin</label>
 			<input class="form-control" id="origin" type="text" placeholder="Origin">
@@ -69,11 +69,104 @@
 	    <ul class="navbar nav">
 	      <li><a href="{{pathFor 'homeTemplate'}}">Home</a></li>
 	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
-	    </ul>
-	    <ul class="navbar nav">
-	    {{>loginButtons}}
+	      <li>{{> loginButtons}}</li>
 	    </ul>
 	</div>
 	</div>
 	</nav>
 </template>
+
+<template name="flightPlanForm">
+<div class="container" id="formContainer">
+  <div class="row centered-form">
+    <form role="form">
+    <div class="row">
+      <div class="col-md-3">
+        <label>Type</label>
+          <input type="text" name="type" id="type" class="form-control input-sm" placeholder="Type">
+      </div>
+      <div class="col-md-3">
+        <label>Aircraft ID</label>
+        <input type="text" name="acID" id="acID" class="form-control input-sm" placeholder="Aircraft ID">
+      </div>
+      <div class="col-md-3">
+        <label>Aircraft Type</label>
+        <input type="text" name="acType" id="acType" class="form-control input-sm" placeholder="Aircraft Type">
+      </div>
+      <div class="col-md-2">
+        <label>Special Equipment</label>
+        <input type="text" name="specialEquip" id="specialEquip" class="form-control input-sm" placeholder="Equipment">
+      </div>
+      <div class="col-md-1">
+        <label>
+          <input type="checkbox">Heavy
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <label>TAS</label>
+        <input type="text" name="TAS" id="TAS" class="form-control input-sm" placeholder="TAS">
+      </div>
+      <div class="col-md-2">
+        <label>Departure Point</label> 
+        <input type="text" name="departure_point" class="form-control input-sm" placeholder="Departure Point">
+      </div>
+      <div class="col-md-3">
+        <label>Departure Time</label> 
+        <input type="text" name="departure_time" class="form-control input-sm" placeholder="Departure Time (Zulu)">
+      </div>
+      <div class="col-md-3">
+        <label>Cruise Altitude</label>
+        <input type="text" name="cruiseAlt" class="form-control input-sm" placeholder="Cruise Altitude">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Route of Flight</label> 
+      <input type="text" name="route" id="routeField" class="form-control input-sm" placeholder="Route of Flight" value="{{routeFill}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label>Destionation</label>
+        <input type="text" name="destination" class="form-control input-sm" placeholder="Destination">
+      </div>
+      <div class="col-md-2">
+        <label>Time Enroute</label>
+        <input type="text" name="timeEnroute" class="form-control input-sm" placeholder="Time Enroute">
+      </div>
+      <div class="col-md-4">
+        <label>Remarks</label>
+        <input type="text" name="remarks" class="form-control input-sm" placeholder="Remarks">
+      </div>
+      <div class="col-md-2">
+        <label>Fuel Onboard</label>
+        <input type="text" name="fuelOnBoard" class="form-control input-sm" placeholder="Fuel Onboard">
+      </div>
+      <div class="col-md-2">
+        <label>Alternate Airport</label>
+        <input type="text" name="alternate" class="form-control input-sm" placeholder="Alternate Airport">
+      </div>
+    </div>
+    <div class="row" id="address">
+      <div class="col-md-4">
+      <label>Pilot Name, Address and Phone</label>
+      <input type="text" name="name" class="form-control input-sm" placeholder="Name">
+        <input type="text" name="address" class="form-control input-sm" placeholder="Address">
+        <input type="text" name="phone" class="form-control input-sm" placeholder="Phone Number">
+      </div>
+      <div class="col-md-4">
+        <label>Aircraft Home Base</label>
+        <input type="text" name="base" class="form-control input-sm" placeholder="Home Base">
+        <label>Number Aboard</label>
+        <input type="text" name="SOB" class="form-control input-sm" placeholder="SOB">
+      </div>
+    </div>
+    <div class="row">
+      
+    </div>
+    </form> 
+  </div>
+  </div>
+	</template>
