@@ -5,12 +5,6 @@ Template.routesTemplate.helpers({
 	}
 });
 
-Template.flightPlanForm.helpers({
-	routeFill: function(content) {
-		return content;
-	}
-});
-
 Template.flightPlanForm.routeFill = function() {
 	return Session.get('content');
 }
