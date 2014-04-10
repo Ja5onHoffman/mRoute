@@ -11,6 +11,10 @@ Template.flightPlanForm.helpers({
 	}
 });
 
+Template.flightPlanForm.routeFill = function() {
+	return Session.get('content');
+}
+
 
 Deps.autorun(function() {
 	Meteor.subscribe('filedRoutes', Session.get("origin"), Session.get("destination"));
@@ -42,6 +46,7 @@ Template.route.events({
 	"click #routeRow": function(e) {
 		e.preventDefault;
 			var content = $('#routing').text();
+			Session.set('content', $('#routing').text());
 			Router.go('/flightPlanForm');
 		}
 })
