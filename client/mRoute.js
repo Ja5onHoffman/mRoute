@@ -10,6 +10,7 @@ Template.flightPlanForm.routeFill = function() {
 }
 
 
+
 Deps.autorun(function() {
 	Meteor.subscribe('filedRoutes', Session.get("origin"), Session.get("destination"));
 })

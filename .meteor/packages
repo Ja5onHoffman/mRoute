@@ -11,4 +11,5 @@ accounts-password
 iron-router
 tags
 blaze-layout
-accounts-ui-bootstrap-dropdown
+accounts-base
+accounts-ui-bootstrap-3-blaze

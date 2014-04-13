@@ -38,6 +38,12 @@ body {
     text-align: center;
 }
 
+#formContainer {
+    max-width: 900px;
+    padding: 10px 30px 30px;
+    text-align: center;
+}
+
 .navbar { margin-bottom: 10px }
 .navbar .navbar-inner {
     border-radius: 0px 0px 3px 3px;
