@@ -71,7 +71,7 @@
 	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
-	    {{>_loginButtons}}
+	    <li><a href="#" class="login">Sign In/Up</a></li>
 	    </ul>
 	</div>
 	</div>
@@ -172,3 +172,23 @@
   </div>
   </div>
 	</template>
+
+<template name="overlay">
+  {{#if overlay}}
+  <div class='overlay'>
+    {{> loginForm}}
+  </div>
+  {{/if}}
+</template>
+
+<template name="loginForm">
+  <div class="formDiv">
+  <form id="login-form" action="action">
+      <div>
+        <input type="email" id="login-email" />
+        <input type="password" id="login-password" />
+        <input type="submit" id="login-button" value="Sign in" />
+     </div>
+   </form>
+   </div>
+</template>

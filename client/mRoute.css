@@ -30,6 +30,16 @@ body {
     border-radius: 4px 4px 0 0;
 }
 
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
 
 
 .container {
@@ -81,8 +91,8 @@ input#origin.form-control, input#destination.form-control {
     text-align: left;
 }
 
-#login {
-    position: relative;
+#formDiv {
+    position: absolute;
     display: block;
     padding: 10px 15px 10px;
     /* color: #777777; */ 

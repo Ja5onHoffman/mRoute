@@ -46,3 +46,23 @@ Template.route.events({
 		}
 })
 
+
+Template.navBar.events({
+	"click .login": function(e) {
+		e.preventDefault;
+		Session.set('overlay', true);
+	}
+})
+
+Template.overlay.events({
+	"click .overlay": function(e) {
+		e.preventDefault;
+		Session.set('overlay', false);
+	}
+})
+
+Template.overlay.helpers({
+	overlay: function() {
+		return Session.get('overlay');
+	}
+})

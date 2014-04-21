@@ -2,7 +2,6 @@
   "packages": {
     "iron-router": {},
     "bootstrap-3": {},
-    "tags": {},
-    "accounts-ui-bootstrap-3-blaze": {}
+    "tags": {}
   }
 }
