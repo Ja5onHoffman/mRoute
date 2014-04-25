@@ -8,15 +8,15 @@ Meteor.startup(function() {
 });
 
 var url = "http://flightxml.flightaware.com/json/FlightXML2/";
-var username = "jasonandrewhoffman";
-var apiKey = "0560af20db89ba4b2fba0dbae9d4543e36cfc69a";
+var username = "username";
+var apiKey = "pass";
 
 Meteor.methods({
 	callFltAware: function(origin, destination) {
 		this.unblock()
       try {
         var result = HTTP.call("GET", url + 'RoutesBetweenAirportsEx', {
-    		auth: "jasonandrewhoffman:0560af20db89ba4b2fba0dbae9d4543e36cfc69a",
+    		auth: "username:pass",
             params: {
                 origin: origin, 
                 destination: destination,

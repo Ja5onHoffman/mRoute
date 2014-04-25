@@ -40,10 +40,14 @@ Template.airportForm.events({
 Template.route.events({
 	"click #routeRow": function(e) {
 		e.preventDefault;
+		if (Meteor.user() === null) {
+			alert("Log in to file this route");
+		} else {
 			var content = $('#routing').text();
 			Session.set('content', $('#routing').text());
 			Router.go('/flightPlanForm');
 		}
+	}
 })
 
 
@@ -54,17 +58,45 @@ Template.navBar.events({
 	}
 })
 
-Template.loginForm.events({
-	"click .close": function(e) {
-		e.preventDefault;
-		Session.set('overlay', false);
-	},
+Template.registerForm.events({
+	'submit #registerForm' : function(e, t) {
+      e.preventDefault();
+      var email = t.find('#email').value;
+      var password = t.find('#password').value;
 
-	"submit submit": function(e, t) {
+        // Trim and validate the input
+
+      Accounts.createUser({email: email, password : password}, function(err){
+          if (err) {
+            // Inform the user that account creation failed
+            alert("There was an error.");
+          } else {
+            // Success. Account has been created and the user
+            // has logged in successfully.
+            alert("Success!");
+            Session.set('overlay', false);
+          }
+        });
+      return false;
+    },
+
+    'click .close': function(e) {
+    	e.preventDefault();
+    	Session.set('overlay', false);
+    },
+
+    'click #loginLink': function(e) {
+    	e.preventDefault();
+    	Session.set('userLogin', true);
+    }
+})
+
+Template.loginForm.events({
+	'submit #loginForm' : function(e, t){
       e.preventDefault();
       // retrieve the input field values
-      var email = t.find('#login-email').value;
-      var password = t.find('#login-password').value;
+      var email = t.find('#email').value;
+      var password = t.find('#password').value;
 
         // Trim and validate your fields here.... 
 
@@ -72,19 +104,36 @@ Template.loginForm.events({
         // Meteor.loginWithPassword() function.
         Meteor.loginWithPassword(email, password, function(err){
         if (err) {
-          // The user might not have been found, or their passwword
+        	 // The user might not have been found, or their passwword
           // could be incorrect. Inform the user that their
           // login attempt has failed. 
-        } else {
+        	alert('There was an error.');
+	       } else {
           // The user has been logged in.
+          alert('Success!');
+          Session.set('overlay', false);
         }
       });
          return false; 
-      }
+      },
+
+	'click #registerLink': function(e) {
+		e.preventDefault();
+		Session.set('userLogin', false);
+	},
+
+	'click .close': function(e) {
+    	e.preventDefault();
+    	Session.set('overlay', false);
+    },
 })
 
 Template.overlay.helpers({
 	overlay: function() {
 		return Session.get('overlay');
+	},
+
+	userLogin: function() {
+		return Session.get('userLogin');
 	}
 })

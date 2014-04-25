@@ -71,7 +71,11 @@
 	      <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
+      {{#if currentUser}}
+        <li><a href="#" class="accountPage">My Account</a></li>
+        {{else}}
 	    <li><a href="#" class="login">Sign In/Up</a></li>
+      {{/if}}
 	    </ul>
 	</div>
 	</div>
@@ -79,6 +83,9 @@
 </template>
 
 <template name="flightPlanForm">
+<div class='formHead'>
+<h4>Quick Route will remember the flight plan information from you previously filed route.</h4>
+</div>
 <div class="container" id="formContainer">
   <div class="row centered-form">
     <form role="form">
@@ -168,6 +175,8 @@
     <div class="row">
       
     </div>
+    <button type='button' id='save' class='btn btn-primary btn-large'>Save</button>
+    <button type='button' id='file' class='btn btn-primary btn-large'>File!</button>
     </form> 
   </div>
   </div>
@@ -176,11 +185,14 @@
 <template name='overlay'>
   {{#if overlay}}
     <div id='overlay' class='overlay'>
+    {{#if userLogin}}
         {{> loginForm}}
+      {{else}}
+        {{> registerForm}}
+      {{/if}}
       </div>
   {{/if}}
 </template>
-
 
 
 <!-- <template name="loginForm">
@@ -193,8 +205,10 @@
    </form>
 </template> --> 
 
+
+<!-- LOGIN FORM -->
 <template name="loginForm">
-  <form id ="loginForm" class="form-horizontal">
+  <form id="loginForm" class="form-horizontal">
   <button class="close">X</button> 
     <fieldset>
 <!-- Form Name -->
@@ -204,7 +218,7 @@
 <div class="form-group">
   <label class="control-label" for="Username">Username</label>  
   <div class="col-sm-4">
-  <input id="Username" name="Username" type="email" placeholder="Email" class="form-control input-md">
+  <input id="email" name="Username" type="email" placeholder="Email" class="form-control input-md">
     
   </div>
 </div>
@@ -213,7 +227,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Password">Password</label>
   <div class="col-md-4">
-    <input id="Password" name="Password" type="password" placeholder="Password" class="form-control input-md">
+    <input id="password" name="Password" type="password" placeholder="Password" class="form-control input-md">
     
   </div>
 </div>
@@ -227,6 +241,45 @@
 </div>
 
 </fieldset>
-<p style="text-align:center">Don't have an account? Click <a href="#" id="register">here</a> to register.</p>
+<p style="text-align:center">Click <a href="#" id="registerLink">here</a> to register.</p>
+</form>
+</template>
+
+<!-- REGISTRATION FORM -->
+<template name="registerForm">
+  <form id ="registerForm" class="form-horizontal">
+  <button class="close">X</button> 
+    <fieldset>
+<!-- Form Name -->
+    <legend>Register</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label" for="Username">Username</label>  
+  <div class="col-sm-4">
+  <input id="email" name="Username" type="email" placeholder="Email" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Password">Password</label>
+  <div class="col-md-4">
+    <input id="password" name="Password" type="password" placeholder="Password" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">Submit</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+<p style="text-align:center">Already have an account? Click <a href="#" id='loginLink'>here</a> to login.</p>
 </form>
 </template>

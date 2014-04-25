@@ -101,12 +101,16 @@ input#origin.form-control, input#destination.form-control {
     padding-top: 20px;
 }
 
+.formHead {
+    text-align: center;
+}
+
 .about {
     padding: 100px;
     text-align: left;
 }
 
-#loginForm {
+#registerForm, #loginForm {
     margin: 0 auto;
     padding: 10px;
     width: 500px;
@@ -114,7 +118,12 @@ input#origin.form-control, input#destination.form-control {
     border-radius: 10px;
 }
 
-#loginForm input {
+#save, #file {
+    width: 100px;
+    padding: 10px;
+}
+
+#registerForm input, #loginForm input {
     height: 30px;
 }
 
