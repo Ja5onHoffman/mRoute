@@ -173,22 +173,60 @@
   </div>
 	</template>
 
-<template name="overlay">
+<template name='overlay'>
   {{#if overlay}}
-  <div class='overlay'>
-    {{> loginForm}}
-  </div>
+    <div id='overlay' class='overlay'>
+        {{> loginForm}}
+      </div>
   {{/if}}
 </template>
 
-<template name="loginForm">
-  <div class="formDiv">
-  <form id="login-form" action="action">
+
+
+<!-- <template name="loginForm">
+  <form id="loginForm" action="action">
       <div>
         <input type="email" id="login-email" />
         <input type="password" id="login-password" />
         <input type="submit" id="login-button" value="Sign in" />
      </div>
    </form>
-   </div>
+</template> --> 
+
+<template name="loginForm">
+  <form id ="loginForm" class="form-horizontal">
+  <button class="close">X</button> 
+    <fieldset>
+<!-- Form Name -->
+    <legend>Login</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label" for="Username">Username</label>  
+  <div class="col-sm-4">
+  <input id="Username" name="Username" type="email" placeholder="Email" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Password">Password</label>
+  <div class="col-md-4">
+    <input id="Password" name="Password" type="password" placeholder="Password" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">Submit</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+<p style="text-align:center">Don't have an account? Click <a href="#" id="register">here</a> to register.</p>
+</form>
 </template>

@@ -37,15 +37,30 @@ body {
     width: 100%;
     height: 100%;
     background: #000;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
+    padding-top: 200px;
+    background-color: rgba(0,0,0, 0.5);
 }
 
+/*.panel {
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.2), 0 10px 27px rgba(0,0,0,0.7);
+  border-radius:4px;
+  box-sizing: border-box;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -240px 0 0 -250px;
+  opacity: 0;
+ } */ 
 
 .container {
     max-width: 730px;
     padding: 10px 30px 30px;
     text-align: center;
+}
+
+input {
+    height: 25px;
 }
 
 #formContainer {
@@ -91,14 +106,19 @@ input#origin.form-control, input#destination.form-control {
     text-align: left;
 }
 
-#formDiv {
-    position: absolute;
-    display: block;
-    padding: 10px 15px 10px;
-    /* color: #777777; */ 
-    text-decoration: none;
-    text-shadow: 0 1px 0 #ffffff;
+#loginForm {
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+    background: white;
+    border-radius: 10px;
 }
+
+#loginForm input {
+    height: 30px;
+}
+
+
 
 footer {
     text-align: right;
