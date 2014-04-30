@@ -9,6 +9,18 @@ Template.flightPlanForm.routeFill = function() {
 	return Session.get('content');
 }
 
+Template.flightPlanForm.events({
+	"click #save": function(e) {
+		e.preventDefault;
+
+
+	},
+
+	"click #file": function(e) {
+		e.preventDefault;
+
+	}
+})
 
 
 Deps.autorun(function() {
@@ -61,13 +73,33 @@ Template.navBar.events({
 Template.registerForm.events({
 	'submit #registerForm' : function(e, t) {
       e.preventDefault();
-      var email = t.find('#email').value;
-      var password = t.find('#password').value;
+      var email = t.find('#email').value, 
+      password = t.find('#password').value;
+
+      console.log(email);
+      console.log(password);
 
         // Trim and validate the input
-
-      Accounts.createUser({email: email, password : password}, function(err){
-          if (err) {
+   //  if (options.password.length > 6 && options.password.length != 0)
+     	Accounts.createUser({
+				    email: email,
+				    password: password,
+				    profile: {
+				      type: "",
+				      aircraftType: "",
+				      aircraftID: "",
+				      specialEquip: "",
+				      tas: "",
+				      remarks: "",
+				      pilotNAP: {
+				        name: "",
+				        address: "",
+				        phone: ""
+				      },
+				      homeBase: ""
+				    }
+				}, function(err) {
+      	if (err) {
             // Inform the user that account creation failed
             alert("There was an error.");
           } else {
@@ -89,7 +121,7 @@ Template.registerForm.events({
     	e.preventDefault();
     	Session.set('userLogin', true);
     }
-})
+  })
 
 Template.loginForm.events({
 	'submit #loginForm' : function(e, t){

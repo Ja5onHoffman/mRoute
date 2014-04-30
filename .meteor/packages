@@ -4,11 +4,11 @@
 # but you can also edit it by hand.
 
 standard-app-packages
+accounts-password
+accounts-base
 insecure
 http
 bootstrap-3
-accounts-password
 iron-router
 tags
 blaze-layout
-accounts-base

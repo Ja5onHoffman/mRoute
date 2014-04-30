@@ -8,7 +8,7 @@ Meteor.startup(function() {
 });
 
 var url = "http://flightxml.flightaware.com/json/FlightXML2/";
-var username = "username";
+var username = "user";
 var apiKey = "pass";
 
 Meteor.methods({
@@ -16,7 +16,7 @@ Meteor.methods({
 		this.unblock()
       try {
         var result = HTTP.call("GET", url + 'RoutesBetweenAirportsEx', {
-    		auth: "username:pass",
+    		auth: "user:pass",
             params: {
                 origin: origin, 
                 destination: destination,
@@ -29,9 +29,7 @@ Meteor.methods({
     
     var r = result.data.RoutesBetweenAirportsExResult.data; 
       for (var i = 0; i < r.length; i++) {
-
       var route = {
-
         airports: {
             origin: origin, 
             destination: destination
@@ -44,8 +42,6 @@ Meteor.methods({
           }
 
           FiledRoutes.upsert(route, route);
-            
-        	
         }
         return result
       } catch (e) {
