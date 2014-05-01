@@ -10,10 +10,31 @@ Template.flightPlanForm.routeFill = function() {
 }
 
 Template.flightPlanForm.events({
-	"click #save": function(e) {
+	"click #save": function(e, t) {
 		e.preventDefault;
+		var type = t.find('#type').value,
+		acID = t.find('#acID').value,
+		acType = t.find('#acType').value,
+		specialEquip = t.find('#specialEquip').value,
+		TAS = t.find('#TAS').value,
+		remarks = t.find('#remarks').value,
+		pilotName = t.find('#pilotName').value,
+		pilotAddress = t.find('#pilotAddress').value,
+		pilotPhone = t.find('#pilotPhone').value;
 
-
+		Meteor.users.update(Meteor.userId(), {$set: 
+			{ profile: {
+				      type: type,
+				      acType: acType,
+				      acID: acID,
+				      specialEquip: specialEquip,
+				      tas: TAS,
+				      remarks: remarks,
+				      pilotNAP: {
+				        name: pilotName,
+				        address: pilotAddress,
+				        phone: pilotPhone
+				      }}}})
 	},
 
 	"click #file": function(e) {
