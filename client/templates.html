@@ -92,19 +92,19 @@
     <div class="row">
       <div class="col-md-3">
         <label>Type</label>
-          <input type="text" name="type" id="type" class="form-control input-sm" placeholder="Type">
+          <input type="text" name="type" id="type" class="form-control input-sm" placeholder="Type" value="{{currentUser.profile.type}}">
       </div>
       <div class="col-md-3">
         <label>Aircraft ID</label>
-        <input type="text" name="acID" id="acID" class="form-control input-sm" placeholder="Aircraft ID">
+        <input type="text" name="acID" id="acID" class="form-control input-sm" placeholder="Aircraft ID" value="{{currentUser.profile.acID}}">
       </div>
       <div class="col-md-3">
         <label>Aircraft Type</label>
-        <input type="text" name="acType" id="acType" class="form-control input-sm" placeholder="Aircraft Type">
+        <input type="text" name="acType" id="acType" class="form-control input-sm" placeholder="Aircraft Type" value="{{currentUser.profile.acType}}">
       </div>
       <div class="col-md-2">
         <label>Special Equipment</label>
-        <input type="text" name="specialEquip" id="specialEquip" class="form-control input-sm" placeholder="Equipment">
+        <input type="text" name="specialEquip" id="specialEquip" class="form-control input-sm" placeholder="Equipment" value="{{currentUser.profile.specialEquip}}">
       </div>
       <div class="col-md-1">
         <label>
@@ -115,7 +115,8 @@
     <div class="row">
       <div class="col-md-1">
         <label>TAS</label>
-        <input type="text" name="TAS" id="TAS" class="form-control input-sm" placeholder="TAS">
+        <input type="text" name="TAS" id="TAS" class="form-control input-sm" placeholder="TAS"
+        value="{{currentUser.profile.TAS}}">
       </div>
       <div class="col-md-2">
         <label>Departure Point</label> 
@@ -147,7 +148,7 @@
       </div>
       <div class="col-md-4">
         <label>Remarks</label>
-        <input type="text" id="remarks" name="remarks" class="form-control input-sm" placeholder="Remarks">
+        <input type="text" id="remarks" name="remarks" class="form-control input-sm" placeholder="Remarks" value="{{currentUser.profile.remarks}}">
       </div>
       <div class="col-md-2">
         <label>Fuel Onboard</label>
@@ -161,9 +162,9 @@
     <div class="row" id="address">
       <div class="col-md-4">
       <label>Pilot Name, Address and Phone</label>
-      <input type="text" id="pilotName" class="form-control input-sm" placeholder="Name">
-        <input type="text" id="pilotAddress" name="address" class="form-control input-sm" placeholder="Address">
-        <input type="text" id="pilotPhone" name="phone" class="form-control input-sm" placeholder="Phone Number">
+      <input type="text" id="pilotName" class="form-control input-sm" placeholder="Name" value="{{currentUser.profile.pilotNAP.name}}">
+        <input type="text" id="pilotAddress" name="address" class="form-control input-sm" placeholder="Address" value="{{currentUser.profile.pilotNAP.address}}">
+        <input type="text" id="pilotPhone" name="phone" class="form-control input-sm" placeholder="Phone Number" value="{{currentUser.profile.pilotNAP.phone}}">
       </div>
       <div class="col-md-4">
         <label>Aircraft Home Base</label>

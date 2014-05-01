@@ -3,11 +3,17 @@ Template.routesTemplate.helpers({
 	filedRoutes: function() {
 		return FiledRoutes.find();
 	}
-});
+})
 
-Template.flightPlanForm.routeFill = function() {
-	return Session.get('content');
-}
+
+Template.flightPlanForm.helpers({
+		routeFill: function() {
+			return Session.get('content');
+		},
+
+
+
+	})
 
 Template.flightPlanForm.events({
 	"click #save": function(e, t) {
