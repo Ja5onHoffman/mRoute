@@ -72,7 +72,7 @@
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
       {{#if currentUser}}
-        <li><a href="#" class="accountPage">My Account</a></li>
+        <li><a href="{{pathFor 'flightPlanForm'}}" class="accountPage">My Flight</a></li>
         {{else}}
 	    <li><a href="#" class="login">Sign In/Up</a></li>
       {{/if}}
@@ -84,7 +84,7 @@
 
 <template name="flightPlanForm">
 <div class='formHead'>
-<h4>Quick Route will remember the flight plan information from you previously filed route.</h4>
+<h4>Quick Route will remember flight plan information from your previously saved or filed route.</h4>
 </div>
 <div class="container" id="formContainer">
   <div class="row centered-form">
